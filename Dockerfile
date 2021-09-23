@@ -1,5 +1,7 @@
 # docker build -t innovad/jenkins:2.313 .
 # docker run -p 8080:8080 --name=jenkins-master-FS22 innovad/jenkins:2.313
+# docker login
+# docker push innovad/jenkins:2.313
 FROM jenkins/jenkins:2.313
 USER root
 RUN apt-get update && \

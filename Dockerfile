@@ -1,7 +1,3 @@
-# docker build -t innovad/jenkins:2.313.1 .
-# docker run -p 8080:8080 --name=jenkins-master-FS22 innovad/jenkins:2.313.1
-# docker login
-# docker push innovad/jenkins:2.313.1
 FROM jenkins/jenkins:2.313
 USER root
 ENV VERSION=20.10.8

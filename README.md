@@ -31,3 +31,8 @@ https://github.com/faudeltn/Jenkins
 
     chown -R jenkins:jenkins $JENKINS_HOME/jobs
 
+### How to recreate Jenkins settings after fresh install
+#### add NPM as a global tool
+#### add docker builder URL in Jenkins configuration
+#### add docker clouds
+

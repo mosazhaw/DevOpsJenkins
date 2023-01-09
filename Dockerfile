@@ -1,6 +1,10 @@
 FROM jenkins/jenkins:2.313
 USER root
 ENV VERSION=20.10.8
+# time fix
+RUN echo "Acquire::Check-Valid-Until \"false\";\nAcquire::Check-Date \"false\";" | cat > /etc/apt/apt.conf.d/10no--check-valid-until
+RUN apt-get update
+# end time fix
 RUN curl -fsSL https://get.docker.com -o get-docker.sh
 RUN sh get-docker.sh
 RUN usermod -a -G docker jenkins

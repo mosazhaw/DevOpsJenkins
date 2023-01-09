@@ -18,6 +18,9 @@ https://github.com/faudeltn/Jenkins
     docker login
     docker push innovad/jenkins:2.313.1
 
+### ARM64 (Apple M1)
+    docker buildx build --push --platform linux/arm64 -t innovad/jenkins:2.313.1_arm64 .
+
 ### How to recreate jobs after fresh install (new volume)
 #### Copy original jobs to volume, e.g. on Windows 
 

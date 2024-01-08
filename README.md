@@ -28,7 +28,6 @@ https://github.com/faudeltn/Jenkins
 ### Multi-Platform AMD64, ARM64 (Apple M1, M2)
     if missing: docker buildx create --name devops
     docker buildx use devops  
-    docker buildx build --platform linux/amd64,linux/arm64 -t mosazhaw/jenkins:2.426.2 .
     docker buildx build --push --platform linux/amd64,linux/arm64 -t mosazhaw/jenkins:2.426.2 .
 
 ### How to recreate jobs after fresh install (new volume)

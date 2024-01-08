@@ -1,6 +1,6 @@
-FROM jenkins/jenkins:2.313
+FROM jenkins/jenkins:2.426.2
 USER root
-ENV VERSION=20.10.8
+ENV VERSION=24.0.7
 # time fix
 RUN echo "Acquire::Check-Valid-Until \"false\";\nAcquire::Check-Date \"false\";" | cat > /etc/apt/apt.conf.d/10no--check-valid-until
 RUN apt-get update

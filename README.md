@@ -20,8 +20,8 @@ https://github.com/faudeltn/Jenkins
 
     docker builder prune --all
     docker build -t mosazhaw/jenkins:2.479.1 .
-    docker run -p 8083:8084 --name=jenkins-master-FS25 mosazhaw/jenkins:2.479.1
-    docker run -p 8084:8084 --name=jenkins-class-FS25 mosazhaw/jenkins:2.479.1
+    docker run -p 8083:8080 --name=jenkins-master-fs25 -v jenkins_master_fs25:/var/jenkins_home mosazhaw/jenkins:2.479.1
+    docker run -p 8084:8080 --name=jenkins-class-fs25 -v jenkins_class_fs25:/var/jenkins_home mosazhaw/jenkins:2.479.1
     docker login
     docker push mosazhaw/jenkins:2.479.1
 
@@ -29,6 +29,7 @@ https://github.com/faudeltn/Jenkins
     if missing: docker buildx create --name devops
     docker buildx use devops  
     docker buildx build --push --platform linux/amd64,linux/arm64 -t mosazhaw/jenkins:2.479.1 .
+    docker context use default
 
 ### How to recreate jobs after fresh install (new volume)
 #### Copy original jobs to volume, e.g. on Windows 

@@ -20,7 +20,8 @@ https://github.com/faudeltn/Jenkins
 
     docker builder prune --all
     docker build -t mosazhaw/jenkins:2.479.1 .
-    docker run -p 8080:8080 --name=jenkins-master-FS25 mosazhaw/jenkins:2.479.1
+    docker run -p 8083:8084 --name=jenkins-master-FS25 mosazhaw/jenkins:2.479.1
+    docker run -p 8084:8084 --name=jenkins-class-FS25 mosazhaw/jenkins:2.479.1
     docker login
     docker push mosazhaw/jenkins:2.479.1
 
